@@ -35,9 +35,9 @@ lock minVertV to min(0, 0 - sqrt(abs(targetAlt - alt:radar) * 2 * (maxA * 0.8 - 
 // Control altitude with velocity
 set ku to 5.
 set tu to 1.
-set kp to 0.6 * ku.
-set ki to 1.2 * kp / tu.
-set kd to 0.075 * ku * tu.
+set kp to 0.2 * ku.
+set ki to 0.4 * kp / tu.
+set kd to 0.066 * ku * tu.
 set vertVPid to pidLoop(kp, ki, kd, minVertV, maxVertV).
 set vertVPid:setpoint to targetAlt.
 set targetVertV to vertVPid:update(time:seconds, alt:radar + ship:verticalSpeed).
